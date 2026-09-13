@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYRLNK — Restaurant</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">AYRLNK</div>
+  <ul class="nav-links">
+    <li><a href="#home" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('menu')">Menu</a></li>
+    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+    <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+  </ul>
+  <button class="btn-cart" onclick="showPage('cart')">🛒 Cart <span id="cart-count">0</span></button>
+  <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+</nav>
+
+<!-- ===================== HOME PAGE ===================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Premium Dining Experience</p>
+      <h1 class="hero-title">AYRLNK</h1>
+      <p class="hero-sub">Where every bite tells a story. Bold flavors, unforgettable moments.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('menu')">Explore Menu</button>
+        <button class="btn-outline" onclick="showPage('contact')">Reserve a Table</button>
+      </div>
+    </div>
+    <div class="hero-scroll">↓ Scroll</div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🍽️</div>
+      <h3>Chef's Specials</h3>
+      <p>Crafted with premium ingredients by our award-winning culinary team.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚀</div>
+      <h3>Fast Delivery</h3>
+      <p>Hot meals delivered to your door in under 30 minutes, guaranteed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌿</div>
+      <h3>Fresh Daily</h3>
+      <p>All ingredients sourced fresh every morning from local farms.</p>
+    </div>
+  </section>
+
+  <!-- POSTS / INSTAGRAM STYLE -->
+  <section class="posts-section">
+    <h2 class="section-title">Our Latest Bites</h2>
+    <p class="section-sub">Fresh from our kitchen — follow us for daily specials</p>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-img" style="background:linear-gradient(135deg,#c0392b,#e74c3c)">
+          <span class="post-emoji">🍗</span>
+        </div>
+        <div class="post-body">
+          <div class="post-header">
+            <span class="post-avatar">AY</span>
+            <span class="post-name">AYRLNK Kitchen</span>
+          </div>
+          <p class="post-text">Our <strong>Hyderabadi Dum Biryani</strong> is back! Slow-cooked for 4 hours with aged basmati and hand-ground spices. Limited portions daily. 🔥</p>
+          <div class="post-actions">
+            <button class="post-like" onclick="likePost(this)">❤️ 248</button>
+            <span class="post-tag">#Biryani</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img" style="background:linear-gradient(135deg,#e67e22,#f39c12)">
+          <span class="post-emoji">🍕</span>
+        </div>
+        <div class="post-body">
+          <div class="post-header">
+            <span class="post-avatar">AY</span>
+            <span class="post-name">AYRLNK Kitchen</span>
+          </div>
+          <p class="post-text">Wood-fired <strong>BBQ Chicken Pizza</strong> just dropped! Crispy thin crust, smoky sauce, mozzarella. Try it before it's gone! 🍕✨</p>
+          <div class="post-actions">
+            <button class="post-like" onclick="likePost(this)">❤️ 193</button>
+            <span class="post-tag">#Pizza</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-img" style="background:linear-gradient(135deg,#27ae60,#2ecc71)">
+          <span class="post-emoji">🍹</span>
+        </div>
+        <div class="post-body">
+          <div class="post-header">
+            <span class="post-avatar">AY</span>
+            <span class="post-name">AYRLNK Kitchen</span>
+          </div>
+          <p class="post-text">Beat the heat! Our <strong>Signature Mint Lemonade</strong> is fresh-squeezed every hour. Perfect for the Hyderabad summer! 🌿💚</p>
+          <div class="post-actions">
+            <button class="post-like" onclick="likePost(this)">❤️ 312</button>
+            <span class="post-tag">#Drinks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2 class="section-title">What Our Guests Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"The biryani at AYRLNK is hands down the best in Hyderabad. Authentic flavors, generous portions!"</p>
+        <div class="testi-author">— Ravi Shankar ⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="testi-card">
+        <p>"Amazing ambience, fast service. Their pizza is absolutely divine. Will definitely be back!"</p>
+        <div class="testi-author">— Priya Reddy ⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="testi-card">
+        <p>"Ordered the pasta and burger combo — both were incredible. AYRLNK never disappoints!"</p>
+        <div class="testi-author">— Arjun Mehta ⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand">AYRLNK</div>
+    <p class="footer-tagline">Bold flavors. Unforgettable moments.</p>
+    <div class="social-links">
+      <a href="https://instagram.com/ayrlnk" target="_blank" class="social-btn instagram">📷 Instagram</a>
+      <a href="https://facebook.com/ayrlnk" target="_blank" class="social-btn facebook">👍 Facebook</a>
+      <a href="https://twitter.com/ayrlnk" target="_blank" class="social-btn twitter">🐦 Twitter</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">💬 WhatsApp</a>
+      <a href="https://youtube.com/@ayrlnk" target="_blank" class="social-btn youtube">▶️ YouTube</a>
+    </div>
+    <p class="footer-copy">© 2026 AYRLNK Restaurant. All rights reserved.</p>
+  </footer>
+</div>
+
+<!-- ===================== MENU PAGE ===================== -->
+<div id="page-menu" class="page">
+  <div class="inner-page">
+    <h2 class="page-title">Our Menu</h2>
+    <p class="page-sub">Handcrafted with love, served with pride</p>
+
+    <div class="menu-filter">
+      <button class="filter-btn active" onclick="filterMenu('all',this)">All</button>
+      <button class="filter-btn" onclick="filterMenu('biryani',this)">Biryani</button>
+      <button class="filter-btn" onclick="filterMenu('pizza',this)">Pizza</button>
+      <button class="filter-btn" onclick="filterMenu('pasta',this)">Pasta</button>
+      <button class="filter-btn" onclick="filterMenu('burger',this)">Burgers</button>
+      <button class="filter-btn" onclick="filterMenu('drinks',this)">Drinks</button>
+      <button class="filter-btn" onclick="filterMenu('sides',this)">Sides</button>
+    </div>
+
+    <div class="menu-grid" id="menu-grid">
+      <!-- Items injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ABOUT PAGE ===================== -->
+<div id="page-about" class="page">
+  <div class="inner-page">
+    <h2 class="page-title">About Us</h2>
+    <p class="page-sub">The story behind AYRLNK</p>
+
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-block">
+          <span style="font-size:80px">🍽️</span>
+          <div class="about-badge">Est. 2019</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>We Cook With Passion</h3>
+        <p>AYRLNK was born out of a simple dream — to bring the richest culinary experiences to Hyderabad. Founded in 2019 by Chef Aryan and Lynk Enterprises, we set out to bridge the gap between traditional Indian flavors and contemporary global cuisine.</p>
+        <p>Every dish on our menu is a result of months of research, experimentation, and a deep respect for the ingredients we use. From our slow-cooked biryanis to our wood-fired pizzas, we pour our hearts into every plate.</p>
+        <p>Today, AYRLNK serves over 500 happy customers daily and has become a landmark dining destination in the city.</p>
+        <div class="about-stats">
+          <div class="stat"><span>500+</span>Daily Guests</div>
+          <div class="stat"><span>50+</span>Menu Items</div>
+          <div class="stat"><span>7</span>Years of Excellence</div>
+          <div class="stat"><span>4.9⭐</span>Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <h3 class="section-title">Meet The Team</h3>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">👨‍🍳</div>
+          <h4>Chef Aryan</h4>
+          <p>Head Chef & Co-Founder</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👩‍💼</div>
+          <h4>Priya Lynk</h4>
+          <p>Operations Manager</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👨‍🍳</div>
+          <h4>Chef Rahul</h4>
+          <p>Sous Chef — Italian Cuisine</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👩‍🍳</div>
+          <h4>Chef Sara</h4>
+          <p>Pastry & Beverages</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-brand">AYRLNK</div>
+    <div class="social-links">
+      <a href="https://instagram.com/ayrlnk" target="_blank" class="social-btn instagram">📷 Instagram</a>
+      <a href="https://facebook.com/ayrlnk" target="_blank" class="social-btn facebook">👍 Facebook</a>
+      <a href="https://twitter.com/ayrlnk" target="_blank" class="social-btn twitter">🐦 Twitter</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">💬 WhatsApp</a>
+    </div>
+    <p class="footer-copy">© 2026 AYRLNK Restaurant.</p>
+  </footer>
+</div>
+
+<!-- ===================== CONTACT PAGE ===================== -->
+<div id="page-contact" class="page">
+  <div class="inner-page">
+    <h2 class="page-title">Contact Us</h2>
+    <p class="page-sub">We'd love to hear from you</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <h4>Visit Us</h4>
+            <p>AYRLNK Restaurant, Banjara Hills Road No. 12,<br>Hyderabad, Telangana 500034</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <h4>Call Us</h4>
+            <p>+91 98765 43210<br>+91 98765 43211</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <h4>Email Us</h4>
+            <p>hello@ayrlnk.com<br>orders@ayrlnk.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">⏰</span>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>Monday – Sunday<br>11:00 AM – 11:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://instagram.com/ayrlnk" target="_blank" class="social-btn instagram">📷 Instagram</a>
+            <a href="https://facebook.com/ayrlnk" target="_blank" class="social-btn facebook">👍 Facebook</a>
+            <a href="https://twitter.com/ayrlnk" target="_blank" class="social-btn twitter">🐦 Twitter</a>
+            <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">💬 WhatsApp</a>
+            <a href="https://youtube.com/@ayrlnk" target="_blank" class="social-btn youtube">▶️ YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Arjun Sharma" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Tell us about your reservation, feedback, or inquiry..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%">Send Message ✉️</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CART PAGE ===================== -->
+<div id="page-cart" class="page">
+  <div class="inner-page">
+    <h2 class="page-title">Your Cart</h2>
+    <div id="cart-empty" style="text-align:center;padding:60px 0">
+      <div style="font-size:64px">🛒</div>
+      <p style="font-size:1.2rem;color:var(--muted);margin-top:16px">Your cart is empty.</p>
+      <button class="btn-primary" onclick="showPage('menu')" style="margin-top:20px">Browse Menu</button>
+    </div>
+    <div id="cart-content" style="display:none">
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+        <div class="summary-row"><span>Taxes (5%)</span><span id="tax">₹0</span></div>
+        <div class="summary-row"><span>Delivery</span><span>₹49</span></div>
+        <div class="summary-row total"><span>Total</span><span id="total">₹0</span></div>
+        <button class="btn-primary" style="width:100%;margin-top:16px" onclick="showPage('payment')">Proceed to Payment →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PAYMENT PAGE ===================== -->
+<div id="page-payment" class="page">
+  <div class="inner-page">
+    <h2 class="page-title">Payment</h2>
+    <p class="page-sub">Secure checkout — your data is protected 🔒</p>
+
+    <div class="payment-grid">
+      <div class="payment-form-wrap">
+        <div class="payment-methods">
+          <button class="pay-method active" onclick="setPayMethod(this,'card')">💳 Card</button>
+          <button class="pay-method" onclick="setPayMethod(this,'upi')">📱 UPI</button>
+          <button class="pay-method" onclick="setPayMethod(this,'cod')">💵 Cash on Delivery</button>
+        </div>
+
+        <div id="pay-card">
+          <div class="form-group">
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="Name on card">
+          </div>
+          <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry</label>
+              <input type="text" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" placeholder="•••" maxlength="3">
+            </div>
+          </div>
+        </div>
+
+        <div id="pay-upi" style="display:none">
+          <div class="form-group">
+            <label>UPI ID</label>
+            <input type="text" placeholder="yourname@upi">
+          </div>
+          <div class="upi-apps">
+            <div class="upi-app">📱 GPay</div>
+            <div class="upi-app">💜 PhonePe</div>
+            <div class="upi-app">🟠 Paytm</div>
+            <div class="upi-app">🔵 BHIM</div>
+          </div>
+        </div>
+
+        <div id="pay-cod" style="display:none">
+          <div class="cod-info">
+            <span style="font-size:48px">💵</span>
+            <p>Pay with cash when your order arrives. Our delivery agent will carry change.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:24px">Delivery Address</h3>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Recipient's name">
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <textarea rows="3" placeholder="House/Flat No., Street, Area, City"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <button class="btn-primary" style="width:100%;margin-top:16px;font-size:1.1rem" onclick="placeOrder()">🎉 Place Order</button>
+      </div>
+
+      <div class="order-summary-wrap">
+        <h3>Order Summary</h3>
+        <div id="payment-items"></div>
+        <div class="summary-row" style="margin-top:16px"><span>Subtotal</span><span id="p-subtotal">₹0</span></div>
+        <div class="summary-row"><span>Taxes (5%)</span><span id="p-tax">₹0</span></div>
+        <div class="summary-row"><span>Delivery</span><span>₹49</span></div>
+        <div class="summary-row total"><span>Total</span><span id="p-total">₹0</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SUCCESS PAGE ===================== -->
+<div id="page-success" class="page">
+  <div class="inner-page" style="text-align:center;padding:100px 20px">
+    <div style="font-size:80px;animation:bounce 1s infinite alternate">🎉</div>
+    <h2 style="font-family:'Playfair Display';font-size:2.5rem;margin:24px 0 12px;color:var(--accent)">Order Placed!</h2>
+    <p style="font-size:1.1rem;color:var(--muted);max-width:480px;margin:0 auto">Thank you for ordering from AYRLNK! Your meal is being prepared with love and will arrive shortly.</p>
+    <div class="order-id">Order #AYR-<span id="order-num"></span></div>
+    <button class="btn-primary" onclick="showPage('home')" style="margin-top:32px">Back to Home</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
